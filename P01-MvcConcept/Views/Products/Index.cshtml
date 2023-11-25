@@ -1,0 +1,25 @@
+﻿@model List<Product>
+
+<a class="btn btn-outline-dark" asp-action="Create">Create</a>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+        <tr>
+            <th scope="row">@product.Id</th>
+            <td colspn="2">@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.Amount</td>
+        </tr>
+        }
+       
+    </tbody>
+</table>
