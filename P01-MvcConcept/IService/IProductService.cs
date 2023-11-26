@@ -4,5 +4,6 @@
     {
         void GenerateProduct(int number);
         List<Product> GetProductAll();
+        Product SearchProduct(int id);
     }
 }

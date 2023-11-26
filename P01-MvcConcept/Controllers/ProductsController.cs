@@ -16,5 +16,12 @@ namespace P01_MvcConcept.Controllers
         {
             return View();
         }
+
+        //HttpPost ปลายทาง
+        [HttpPost]
+        public IActionResult Create(Product product)
+        {
+            return View();
+        }
     }
 }

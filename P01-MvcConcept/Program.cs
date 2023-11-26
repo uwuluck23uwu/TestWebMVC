@@ -1,10 +1,12 @@
 ﻿//global ใช้ได้ทั้งหมด
 global using P01_MvcConcept.Models;
+using P01_MvcConcept.IService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IProductService,ProductService>();
 
 var app = builder.Build();
 
