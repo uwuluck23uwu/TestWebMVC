@@ -6,5 +6,6 @@
         List<Product> GetProductAll();
         Product SearchProduct(int id);
         void AddProduct(Product product);
+        void DeleteProduct(int id);
     }
 }
