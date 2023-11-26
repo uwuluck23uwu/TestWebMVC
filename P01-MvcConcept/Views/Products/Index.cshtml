@@ -22,6 +22,8 @@
             <td>
                 @*ใช้ได้ 2 แบบ*@
                 @*<a class="btn btn-outline-light" href="/Products/Delete/@product.Id">Delete</a>*@
+                <a class="btn btn-outline-light" asp-action="Edit" asp-route-id="@product.Id"
+                   onclick="return confirm('คุณต้องการแก้ไข [หมุ่นหล่อ] คนนี้ไหม!')">Edit</a>
                 <a class="btn btn-outline-light" asp-action="Delete" asp-route-id="@product.Id"
                    onclick="return confirm('คุณต้องการลบ [หมุ่นหล่อ] คนนี้จริงเหรอ!')">Delete</a>
             </td>

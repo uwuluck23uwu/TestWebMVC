@@ -48,5 +48,16 @@ namespace P01_MvcConcept.IService
             var resul = SearchProduct(id);
             if (resul != null) { ProductList.Remove(resul); }
         }
+
+        public void UpdateProduct(Product product)
+        {
+            var oldProduct = ProductList.Find(p => p.Id == product.Id);
+            var index = ProductList.IndexOf(oldProduct);
+            if (index != -1)
+            {
+                ProductList.RemoveAt(index);
+                ProductList.Insert(index, product);
+            }
+        }
     }
 }
