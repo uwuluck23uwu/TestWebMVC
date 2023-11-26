@@ -10,6 +10,7 @@ namespace P01_MvcConcept.IService
         public ProductService() 
         {
             ProductList = new List<Product>();
+            GenerateProduct(20);
         }
         public void GenerateProduct(int number = 10)
         {
@@ -30,6 +31,16 @@ namespace P01_MvcConcept.IService
         public List<Product> GetProductAll()
         {
             return ProductList;
+        }
+
+        public Product SearchProduct(int id)
+        {
+            return ProductList.Find(x => x.Id == id);
+        }
+
+        public void AddProduct(Product product)
+        {
+            ProductList.Add(product);
         }
     }
 }

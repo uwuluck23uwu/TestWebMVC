@@ -5,10 +5,14 @@ namespace P01_MvcConcept.Controllers
 {
     public class ProductsController : Controller
     {
+        private readonly IProductService ps;
+
+        public ProductsController(IProductService ps) 
+        {
+            this.ps = ps;
+        }
         public IActionResult Index()
         {
-            var ps = new ProductService();
-            ps.GenerateProduct(20);
             return View(ps.GetProductAll());
         }
 
@@ -21,7 +25,12 @@ namespace P01_MvcConcept.Controllers
         [HttpPost]
         public IActionResult Create(Product product)
         {
-            return View();
+            var result = ps.SearchProduct(product.Id);
+            if (result == null)
+            {
+                ps.AddProduct(product);
+            }
+            return RedirectToAction("Index");
         }
     }
 }
