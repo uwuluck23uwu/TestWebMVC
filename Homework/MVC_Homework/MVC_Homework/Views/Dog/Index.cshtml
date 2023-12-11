@@ -1,9 +1,16 @@
 ﻿@model List<PetsDog>;
 
 <style>
+    #pat_img{
+        background-color: #ff3d55;
+        border-radius: 40px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
     #pat_img img{
+        border-radius: 40px;
         width: 20%;
-        height: 20%;
+        margin-left: 14%;
     }
 </style>
 
@@ -15,8 +22,9 @@
     {
         <div id="pat_img" class="row row-cols-md-2">
             <img src="@item.Img">
-            <div>
+            <div class="pet">
                 <h2>@item.Name</h2>
+                <hr>
                 <h2>@item.Character</h2>
             </div>
         </div>

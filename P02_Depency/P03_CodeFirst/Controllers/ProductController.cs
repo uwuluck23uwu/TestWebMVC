@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using P03_CodeFirst.Models;
 using P03_CodeFirst.Services;
 
 namespace P03_CodeFirst.Controllers
@@ -27,6 +28,39 @@ namespace P03_CodeFirst.Controllers
             {
                 ps.Delete(product);
             }
+            return RedirectToAction("Index");
+        }
+        public IActionResult Create() 
+        {
+            return View();
+        }
+        [HttpPost] //กด Submit ให้มาที่นี้
+        public IActionResult Create(Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            ps.Add(product);
+            return RedirectToAction("Index");
+        }
+        public IActionResult Edit(int id)
+        {
+            var product = ps.GetById(id);
+            if (product == null)
+            {
+                TempData["OK"] = true;
+            }
+            return View(product);
+        }
+        [HttpPost]
+        public IActionResult Edit(Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            ps.Update(product);
             return RedirectToAction("Index");
         }
     }
