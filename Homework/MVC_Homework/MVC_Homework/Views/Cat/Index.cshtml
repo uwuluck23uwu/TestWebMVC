@@ -1,0 +1,10 @@
+﻿@model List<PetsCat>;
+
+@foreach (var item in Model)
+{
+    <img src="@item.Img">
+    <h2>@item.Name</h2>
+    <h2>@item.Description</h2>
+    <h2>@item.Overview</h2>
+    <h2>@item.Character</h2>
+}
