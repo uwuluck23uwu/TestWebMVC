@@ -5,83 +5,61 @@ namespace MVC_Homework.IService
 {
     public class DearFriendService : IServiceDearFriend
     {
-        public List<Pets> DearFriendPetsList {  get; set; }
+        public List<Pets> PetsList { get; set; }
         public List<PetsDog> DearFriendPetsDogList { get; set; }
         public List<PetsCat> DearFriendPetsCatList { get; set; }
-        public List<DearFriendCat> DearFriendCatList { get; set; }
+        public List<DearFriendPets> DearFriendPetsList { get; set; }
         public List<DearFriendDog> DearFriendDogList { get; set; }
+        public List<DearFriendCat> DearFriendCatList { get; set; }
 
         public DearFriendService()
         {
-            DearFriendPetsList = new List<Pets>();
+            PetsList = new List<Pets>();
             DearFriendPetsDogList = new List<PetsDog>();
             DearFriendPetsCatList = new List<PetsCat>();
-            DearFriendCatList = new List<DearFriendCat>();
+            DearFriendPetsList = new List<DearFriendPets>();
             DearFriendDogList = new List<DearFriendDog>();
-            GenerateProduct(4);
+            DearFriendCatList = new List<DearFriendCat>();
+            var pets1 = DearFriendCat.Name.Count;
+            var pets2 = DearFriendPets.Name.Count;
+            GenerateProduct(pets1, pets2);
         }
 
-        void GenerateProduct(int number)
+        void GenerateProduct(int number1,int number2)
         {
-            Random r = new Random();
-            var pets = DearFriendCat.Name.Count;
-            int I = 0;
-            for (int i = 0; i < number; i++)
+            for (int i = 0; i < number1; i++)
             {
-                if ( I == pets) { I = 0; }
                 DearFriendPetsDogList.Add(new PetsDog
                 {
-                    Name = DearFriendDog.Name[I],
-                    Img = DearFriendDog.Img[I],
-                    Description = DearFriendDog.Description[I],
-                    Overview = DearFriendDog.Overview[I],
-                    Character = DearFriendDog.Character[I]
+                    Name = DearFriendDog.Name[i],
+                    Img = DearFriendDog.Img[i],
+                    Description = DearFriendDog.Description[i],
+                    Overview = DearFriendDog.Overview[i],
+                    Character = DearFriendDog.Character[i]
                 });
-                I++;
-            }
-            for (int i = 0; i < number; i++)
-            {
-                if (I == pets) { I = 0; }
                 DearFriendPetsCatList.Add(new PetsCat
                 {
-                    Name = DearFriendCat.Name[I],
-                    Img = DearFriendCat.Img[I],
-                    Description = DearFriendCat.Description[I],
-                    Overview = DearFriendCat.Overview[I],
-                    Character = DearFriendCat.Character[I]
+                    Name = DearFriendCat.Name[i],
+                    Img = DearFriendCat.Img[i],
+                    Description = DearFriendCat.Description[i],
+                    Overview = DearFriendCat.Overview[i],
+                    Character = DearFriendCat.Character[i]
                 });
-                I++;
             }
-        }
-
-        public void AddPets(Pets pet)
-        {
-            DearFriendPetsList.Add(pet);
-        }
-
-        public void AddCat(DearFriendCat pet)
-        {
-            DearFriendCatList.Add(pet);
-        }
-
-        public void AddDog(DearFriendDog pet)
-        {
-            DearFriendDogList.Add(pet);
-        }
-
-        public void AddPetsCat(PetsCat pet)
-        {
-            DearFriendPetsCatList.Add(pet);
-        }
-
-        public void AddPetsDog(PetsDog pet)
-        {
-            DearFriendPetsDogList.Add(pet);
+            for (int i = 0; i < number2; i++)
+            {
+                PetsList.Add(new Pets
+                {
+                    Id = i + 1,
+                    Name = DearFriendPets.Name[i],
+                    Img = DearFriendPets.Img[i],
+                });
+            }
         }
 
         public List<Pets> GetPets()
         {
-            return DearFriendPetsList;
+            return PetsList;
         }
 
         public List<PetsCat> GetPetsCat()
@@ -92,6 +70,33 @@ namespace MVC_Homework.IService
         public List<PetsDog> GetPetsDog()
         {
             return DearFriendPetsDogList;
+        }
+
+        public void AddPets(Pets pet)
+        {
+            PetsList.Add(pet);
+        }
+
+        public Pets SearchProduct(int id)
+        {
+            return PetsList.Find(x => x.Id == id);
+        }
+
+        public void DeletePets(int id)
+        {
+            var resul = SearchProduct(id);
+            if (resul != null) { PetsList.Remove(resul); }
+        }
+
+        public void UpdatePets(Pets pets)
+        {
+            var oldPets = PetsList.Find(p => p.Id == pets.Id);
+            var index = PetsList.IndexOf(oldPets);
+            if (index != -1)
+            {
+                PetsList.RemoveAt(index);
+                PetsList.Insert(index, pets);
+            }
         }
     }
 }

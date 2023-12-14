@@ -1,0 +1,38 @@
+﻿@{
+    string[] name = ["Chameleon", "Snake", "Squirrel", "Porcupine",
+                     "Frog", "Salamander", "Turtle", "Ferrets"];
+    string[] img = [
+        "https://i.pinimg.com/564x/d0/45/6d/d0456dad1f5a4a9148b71ea3adc20cfd.jpg",
+        "https://i.pinimg.com/564x/8e/f6/4e/8ef64e80577bc14230c006cad369d719.jpg",
+        "https://i.pinimg.com/564x/10/c5/eb/10c5eb1e6fdfe36b967597f0a4420d86.jpg",
+        "https://i.pinimg.com/564x/c5/cd/2b/c5cd2b1c2b8a808145dc55cf64f3ae23.jpg",
+        "https://i.pinimg.com/564x/f4/79/4d/f4794d3f51ccbbcc042801b0e1389865.jpg",
+        "https://i.pinimg.com/474x/58/a6/40/58a640d7b65d967258c87be76746548b.jpg",
+        "https://i.pinimg.com/474x/3e/cb/9c/3ecb9c02f8c09ca37e9a24591645fbf3.jpg",
+        "https://i.pinimg.com/474x/2f/3e/d8/2f3ed8382d4c2f68ac046c5bd25e6837.jpg"
+    ];
+}
+
+<div class="body">
+    <div class="pat_type">
+        <h1><img src="https://i.pinimg.com/564x/39/e3/31/39e33114aadb47500d0678f0b179ff4a.jpg">สัตว์เลี้ยง [ Rookie ]</h1>
+    </div>
+    <div id="pat" class="row row-cols-md-4">
+        @for (int i = 0; i < 4; i++)
+        {
+            <div id="love" class="row row-cols-md-1">
+                <img class="love_img" src="@img[i]">
+                <h4 class="name">@name[i]</h4>
+            </div>
+        }
+    </div>
+    <div id="pat" class="row row-cols-md-4">
+        @for (int i = 4; i < 8; i++)
+        {
+            <div id="love" class="row row-cols-md-1">
+                <img class="love_img" src="@img[i]">
+                <h4 class="name">@name[i]</h4>
+            </div>
+        }
+    </div>
+</div>

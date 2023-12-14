@@ -1,0 +1,28 @@
+﻿@model List<PetsCat>;
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="pat_type">
+            <h1><img src="https://i.pinimg.com/564x/39/e3/31/39e33114aadb47500d0678f0b179ff4a.jpg">@item.Name</h1>
+        </div>
+        <div id="pat_img" class="row row-cols-md-1">
+            <div id="div_pat_img" class="row row-cols-md-2">
+                <img src="@item.Img">
+                <div class="pet">
+                    <h2>@item.Name</h2>
+                    <hr>
+                    <h4>@item.Character</h4>
+                </div>
+            </div>
+            <div class="row row-cols-md-1">
+                <div class="overview">
+                    <h2>@item.Overview</h2>
+                </div>
+                <div class="description">
+                    <h2>@item.Description</h2>
+                </div>
+            </div>
+        </div>
+    }
+</div>

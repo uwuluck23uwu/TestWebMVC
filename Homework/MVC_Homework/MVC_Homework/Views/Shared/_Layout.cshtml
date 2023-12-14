@@ -80,6 +80,9 @@
         #pat {
             background-color: #ff7384;
             border-radius: 40px;
+            padding-left: 6%;
+            padding-bottom: 4%;
+            margin-bottom: 2%;
         }
         #pat img {
             border-radius: 60px;
@@ -103,6 +106,54 @@
                 transition: transform 0.3s ease;
             }
         }
+        #pat_img {
+            background-color: #ff3d55;
+            border-radius: 40px;
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+        #pat_img img {
+            border-radius: 40px;
+            width: 24%;
+            margin-left: 12%;
+        }
+        #div_pat_img {
+            background-color: #ff7384;
+            border-radius: 40px;
+            padding: 20px;
+            margin-left: 0.5px;
+            margin-bottom: 20px;
+        }
+        .overview {
+            background-color: #ff7384;
+            border-radius: 40px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .description {
+            background-color: #ff7384;
+            border-radius: 40px;
+            padding: 20px;
+        }
+        .love_img {
+            width: 100%;
+            height: 100%;
+        }
+        #love{
+            padding-bottom: 15%;
+        }
+        #love_img{
+            width: 30%;
+            margin-left: 35%;
+        }
+        #create{
+            padding: 10px;
+        }
+        .Edit_Delete{
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+        }
     </style>
 </head>
 
@@ -121,13 +172,13 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="DearFriend" asp-action="Index">DearFriend</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Pets" asp-action="DearFriend">DearFriend</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Rookie" asp-action="Index">Rookie</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Pets" asp-action="Rookie">Rookie</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Exotic" asp-action="Index">Exotic</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Pets" asp-action="Exotic">Exotic</a>
                         </li>
                     </ul>
                 </div>

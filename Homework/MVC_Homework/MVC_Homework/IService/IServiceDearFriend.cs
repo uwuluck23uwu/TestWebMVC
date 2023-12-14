@@ -8,10 +8,9 @@ namespace MVC_Homework.IService
         List<Pets> GetPets();
         List<PetsCat> GetPetsCat();
         List<PetsDog> GetPetsDog();
+        Pets SearchProduct(int id);
         void AddPets(Pets pet);
-        void AddPetsCat(PetsCat pet);
-        void AddPetsDog(PetsDog pet);
-        void AddCat(DearFriendCat pet);
-        void AddDog(DearFriendDog pet);
+        void DeletePets(int id);
+        void UpdatePets(Pets pets);
     }
 }

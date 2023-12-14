@@ -1,0 +1,21 @@
+﻿@model List<Pets>;
+
+<div class="body">
+    <div class="pat_type row row-cols-md-1">
+        <h1><img src="https://i.pinimg.com/564x/39/e3/31/39e33114aadb47500d0678f0b179ff4a.jpg">สัตว์เลี้ยง [ Rookie ]</h1>
+        <a id="create" class="btn btn-danger" asp-controller="Pets" asp-action="Create">Create</a>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div id="pat" class="row row-cols-md-1">
+            <div id="love" class="row row-cols-md-1">
+                <div class="row row-cols-md-1">
+                    <a class="Edit_Delete" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="Edit_Delete" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('คุณต้องการลบ [สัตว์เลี้ยงที่แสนจะน่ารัก] ตัวนี้จริงเหรอ!')">Delete</a>
+                </div>
+                <img id="love_img" class="love_img" src="@item.Img">
+                <h4 class="name">@item.Name</h4>
+            </div>
+        </div>
+    }
+</div>
