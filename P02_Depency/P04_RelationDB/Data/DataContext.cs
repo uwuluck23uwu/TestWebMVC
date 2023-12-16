@@ -21,10 +21,12 @@ namespace P04_RelationDB.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ComponentProduct>().HasKey(k => new {k.ProductId, k.ComponentId});
         }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Component> Components { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<ComponentProduct> ComponentProducts { get; set; }
+        public DbSet<ProductDetail> ProductDetail {  get; set; }
     }
 }
