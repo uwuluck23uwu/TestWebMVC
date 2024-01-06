@@ -1,0 +1,47 @@
+﻿@model MVC_Homework_1.Models.Component
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Component</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Component" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductExtend.Color" class="control-label"></label>
+                <input asp-for="ProductExtend.Color" class="form-control" />
+                <span asp-validation-for="ProductExtend.Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductExtend.Weig" class="control-label"></label>
+                <input asp-for="ProductExtend.Weig" type="number" class="form-control" />
+                <span asp-validation-for="ProductExtend.Weig" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FeatureId" class="control-label"></label>
+                @foreach (var item in ViewBag.Feature)
+                {
+                    <div>[ @item.Name ]</div>
+                }
+                <input asp-for="FeatureId" type="number" class="form-control" />
+                <span asp-validation-for="FeatureId" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Submit</button>
+            <a asp-action="Index" class="btn btn-dark">Cancel</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Category>
+
+<div>
+    <a class="btn btn-dark" asp-controller="Category" asp-action="Create">Create</a>
+    @if (TempData["OK"] != null)
+    {
+        <div class="alert alert-danger p-4" role="alert">
+            ไม่พบข้อมูล
+        </div>
+    }
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(p => p.Id)</th>
+                <th scope="col">@Html.DisplayNameFor(p => p.Name)</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Name</td>
+                    <td>
+                        <a class="btn btn-outline-dark" asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-dark" onclick="return confirm('คุณแน่ใจไหมที่จะลบ @item.Name')">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
