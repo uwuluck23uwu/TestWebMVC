@@ -18,8 +18,9 @@ namespace MVC_Homework_1.Controllers
             return View(await ps.GetDetail());
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Product = await ps.GetProduct();
             return View();
         }
 
@@ -31,11 +32,12 @@ namespace MVC_Homework_1.Controllers
                 return View();
             }
             await ps.AddDetail(detail);
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Delete(int id)
         {
+            ViewBag.Product = await ps.GetProduct();
             var detail = await ps.FindDetail(id);
             if (detail != null)
             {
@@ -46,6 +48,7 @@ namespace MVC_Homework_1.Controllers
 
         public async Task<ActionResult> Edit(int id)
         {
+            ViewBag.Product = await ps.GetProduct();
             var detail = await ps.FindDetail(id);
             if (detail == null)
             {

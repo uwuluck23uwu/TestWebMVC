@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 namespace MVC_Homework_1.Models
 {

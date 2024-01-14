@@ -15,7 +15,6 @@ namespace MVC_Homework_1.Models
         public ProductExtend ProductExtend { get; set; }
 
         [DisplayName("คุณสมบัติ")]
-        [Range(5, 8, ErrorMessage = "ป้อนค่าระหว่าง {1} ถึง {2}")]
         [Required(ErrorMessage = "กรุณาป้อนข้อมูล")]
         public int FeatureId { get; set; }
         public Feature? Feature { get; set; }

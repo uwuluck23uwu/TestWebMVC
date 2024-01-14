@@ -13,7 +13,7 @@ namespace MVC_Homework_1.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=DESKTOP-M71R1CT\\SQLEXPRESS; Database=MVC_Homework_Sumo; Trusted_Connection=True; TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=10.103.0.17,1433;Database=Home_Work_Sumo;Trusted_Connection=false;MultipleActiveResultSets=true;TrustServerCertificate=True; User Id=student; Password=Pass@sql;Encrypt=false;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

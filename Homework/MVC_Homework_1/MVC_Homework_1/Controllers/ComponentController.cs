@@ -47,8 +47,8 @@ namespace MVC_Homework_1.Controllers
 
         public async Task<ActionResult> Edit(int id)
         {
-            var component = await ps.FindComponent(id);
             ViewBag.Feature = await ps.GetFeature();
+            var component = await ps.FindComponent(id);
             if (component == null)
             {
                 return RedirectToAction(nameof(Index));

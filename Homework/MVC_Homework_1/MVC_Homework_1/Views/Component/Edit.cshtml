@@ -23,7 +23,21 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="ProductExtend.Color" class="control-label"></label>
+                <input asp-for="ProductExtend.Color" class="form-control" />
+                <span asp-validation-for="ProductExtend.Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductExtend.Weig" class="control-label"></label>
+                <input asp-for="ProductExtend.Weig" type="number" class="form-control" />
+                <span asp-validation-for="ProductExtend.Weig" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="FeatureId" class="control-label"></label>
+                @foreach (var item in ViewBag.Feature)
+                {
+                    <div>[@item.Id] @item.Name</div>
+                }
                 <input asp-for="FeatureId" class="form-control" />
                 <span asp-validation-for="FeatureId" class="text-danger"></span>
             </div>

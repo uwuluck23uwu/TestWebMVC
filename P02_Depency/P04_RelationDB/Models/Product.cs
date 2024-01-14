@@ -25,9 +25,9 @@ namespace P04_RelationDB.Models
         [Required(ErrorMessage = "กรุณาป้อนข้อมูล")]
         public int Amount { get; set; }
 
-        //[DisplayName("ภาพ")]
-        //[Required(ErrorMessage = "กรุณาป้อนข้อมูล")]
-        //public string? ImageUrl { get; set; }
+        [DisplayName("ภาพ")]
+        [Required(ErrorMessage = "กรุณาป้อนข้อมูล")]
+        public string? ImageUrl { get; set; }
 
         public ProductExtend ProductExtend { get; set; }
         public int TestId { get; set; }

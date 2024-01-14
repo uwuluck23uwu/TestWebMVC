@@ -106,7 +106,7 @@ namespace P05_UploadFile.Services
                 {
                     var fileDelete = webHostEnvironment.WebRootPath+product.ImageUrl;
                     if (File.Exists(fileDelete))
-                    {
+                    {   
                         File.Delete(fileDelete);
                     }
                 }

@@ -46,7 +46,7 @@
                 <label asp-for="CategoryId" class="control-label"></label>
                 @foreach (var item in ViewBag.Category)
                 {
-                    <div>[ @item.Name ]</div>
+                    <div>[@item.Id] @item.Name</div>
                 }
                 <input asp-for="CategoryId" type="number" class="form-control" />
                 <span asp-validation-for="CategoryId" class="text-danger"></span>

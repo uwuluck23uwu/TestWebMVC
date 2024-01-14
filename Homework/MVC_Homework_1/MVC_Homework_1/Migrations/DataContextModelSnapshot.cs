@@ -138,7 +138,6 @@ namespace MVC_Homework_1.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductId")
@@ -249,8 +248,7 @@ namespace MVC_Homework_1.Migrations
 
             modelBuilder.Entity("MVC_Homework_1.Models.Feature", b =>
                 {
-                    b.Navigation("Component")
-                        .IsRequired();
+                    b.Navigation("Component");
                 });
 #pragma warning restore 612, 618
         }

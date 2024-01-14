@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MVC_Homework_1.Data;
 using MVC_Homework_1.Models;
 using MVC_Homework_1.Services;
 
@@ -45,12 +43,12 @@ namespace MVC_Homework_1.Controllers
                 await ps.DeleteProduct(product);
             }
             return RedirectToAction(nameof(Index));
-        }
+        } 
 
         public async Task<ActionResult> Edit(int id)
         {
-            var product = await ps.FindProduct(id);
             ViewBag.Category = await ps.GetCategory();
+            var product = await ps.FindProduct(id);
             if (product == null)
             {
                 return RedirectToAction(nameof(Index));

@@ -1,8 +1,4 @@
 ﻿@model IEnumerable<Component>
-@{
-    string[] component = ["", "", "", "", "",
-                          "หาความรู้", "พักผ่อน", "เกย์มากๆ", "อื่นๆ"];
-}
 
 <div>
     <a class="btn btn-dark" asp-controller="Component" asp-action="Create">Create</a>
@@ -34,7 +30,6 @@
                     else { <td>-</td> }
                     @if (item.ProductExtend.Weig != null) { <td>@item.ProductExtend.Weig .kg</td> }
                     else { <td>-</td> }
-                    <td>
                     <td>@item.Feature.Name</td>
                     <td>
                         <a class="btn btn-outline-dark" asp-controller="Component" asp-action="Edit" asp-route-id="@item.Id">Edit</a>

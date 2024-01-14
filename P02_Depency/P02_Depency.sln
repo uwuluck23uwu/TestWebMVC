@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P06_Authen", "P06_Authen\P0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P07_AuthenDB", "P07_AuthenDB\P07_AuthenDB.csproj", "{9A5C5CEC-6514-4109-A6E4-DF7686FAC49B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P08_Aythorization", "P08_Aythorization\P08_Aythorization.csproj", "{9D5E7270-015E-44C9-A67D-2C26C10B5735}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P08_Aythorization", "P08_Aythorization\P08_Aythorization.csproj", "{9D5E7270-015E-44C9-A67D-2C26C10B5735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductWeb", "ProductWeb\ProductWeb.csproj", "{5098830A-441D-4BD7-9154-4E4C7AC95CBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{9D5E7270-015E-44C9-A67D-2C26C10B5735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D5E7270-015E-44C9-A67D-2C26C10B5735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D5E7270-015E-44C9-A67D-2C26C10B5735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5098830A-441D-4BD7-9154-4E4C7AC95CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5098830A-441D-4BD7-9154-4E4C7AC95CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5098830A-441D-4BD7-9154-4E4C7AC95CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5098830A-441D-4BD7-9154-4E4C7AC95CBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
